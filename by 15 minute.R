@@ -30,7 +30,9 @@ for (aa in 1:length(dir)) {
       }
     }
   }
-  
+  if(length(start_1)<19){
+    start_1<-c(start_1,data_nrow)
+  }
   #15分鐘中的趨勢
   #各區段
   {
@@ -76,7 +78,7 @@ for (aa in 1:length(dir)) {
     momentum.diff<-c(momentum.diff,sum(momentum.diff_1))
   }
   new_data<-cbind(Time,Open,Close,High,Low,Vol,momentum,momentum.sig,momentum.diff)
-  write.csv(new_data,paste('D:/00/',dir[aa],sep = ""))
+  write.csv(new_data,paste('D:/0000/',dir[aa],sep = ""))
 }
 
   
